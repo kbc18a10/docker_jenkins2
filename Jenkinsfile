@@ -1,9 +1,15 @@
 pipeline {
     agent { dockerfile true }
     stages {
+        stage('npm install'){
+            steps {
+                    sh 'npm install'
+                }
+            }
+        }
         stage('Test') {
             steps {
-                sh 'jenkins-mocha test ./tests/systemtest.js'
+                sh 'npx mocha ./tests/systemtest.js '
             }
         }
     }
