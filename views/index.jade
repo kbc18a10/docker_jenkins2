@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1(id='title')= title
+  form(method='POST' action='/')
+      input#num1(type='text' name='num1' value=num1)
+      |×
+      input#num2(type='text' name='num2' value=num2)
+      |=
+      span(id='result')=result
+      input#btn(type='submit' value='計算')
+  
