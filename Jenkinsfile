@@ -1,8 +1,5 @@
 pipeline {
     agent { dockerfile true }
-   environment {
-        HOME = '.'
-    }
     stages {
         stage('npm install') {
             steps {
