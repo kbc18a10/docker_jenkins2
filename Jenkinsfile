@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'npx mocha ./tests/systemtest.js'
+                sh 'jenkins-mocha test ./tests/systemtest.js'
             }
         }
     }
