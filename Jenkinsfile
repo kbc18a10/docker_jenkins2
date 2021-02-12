@@ -1,14 +1,17 @@
 pipeline {
     agent { dockerfile true }
+   environment {
+        HOME = '.'
+    }
     stages {
-        stage('npm install'){
+        stage('npm install') {
             steps {
-                bat 'npm install'
+                sh 'npm install'
             }
         }
         stage('Test') {
             steps {
-                sh 'npx mocha ./tests/systemtest.js '
+                sh 'npx mocha ./tests/systemtest.js'
             }
         }
     }
