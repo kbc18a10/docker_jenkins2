@@ -3,6 +3,17 @@ const chai = require('chai');
 const assert = chai.assert;
 const request = require('request');
 const cheerio = require('cheerio');
+const Calc = require('../routes/calc')
+
+describe('単体テスト',function(){
+    it('Testing input calc module 2, 4  return 8',function(){
+        assert.equal(Calc.multiple(2,4),8);
+    })
+
+    it('Testing input calc module 0, 4  return 0',function(){
+        assert.equal(Calc.multiple(0,4),0);
+    })
+});
 
 describe('Webシステムテスト', async function(){
     it('Access with GET Method return 200', async function(){
