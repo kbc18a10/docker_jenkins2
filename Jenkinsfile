@@ -4,19 +4,16 @@ pipeline {
         HOME = '.'
     }
     stages {
-        stage('npm install') {
+        stage('Prep') {
             steps {
+                sh 'node -v'
                 sh 'npm install'
-            }
-        }
-        stage('check npm modules') {
-            steps {
-                sh 'npm ls'
+                sh 'npm start &'
             }
         }
         stage('Test') {
             steps {
-                sh 'npx mocha ./tests/systemtest.js'
+                sh 'npm test'
             }
         }
     }

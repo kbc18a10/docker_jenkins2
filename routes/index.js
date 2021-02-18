@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var Calc = require('./calc');
+var path = require('path')
+var Calc = require(path.join(__dirname,'../functions/calc.js'));
 
 router.get('/', function(req, res, next) {
   res.render('index',{title:'掛け算',num1:'',num2:''})
